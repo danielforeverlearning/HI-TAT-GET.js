@@ -331,12 +331,13 @@ function main() {
         // Create element with <a> tag
         const link = document.createElement("a");
         const mytextarea = document.createElement("textarea");
-        mytextarea.innerHTML = "UNIT, BOOKING-ID, INCOME, MGMT-FEE, TAT1, TAT2, GE1, GE2, SUBTOTAL, TAT-GROSS-INCOME, TAT, GET, OLDWAY-GET-GROSS-INCOME, OLDWAY-GET\n";
+        mytextarea.innerHTML = "UNIT, BOOKING-ID, INCOME, MGMT-FEE, TAT1, TAT2, GE1, GE2, SUBTOTAL, TAT-GROSS-INCOME, TAT, GET, OTAT, OLDWAY-GET-GROSS-INCOME, OLDWAY-GET\n";
 
         var unitstr = "";
         var TATGrossIncome;
         var TAT;
         var GET;
+        var OTAT;
         var OLDWAY_GETGrossIncome;
         var OLDWAY_GET;
         for (ii=0; ii < globalSaveArray.length; ii++)
@@ -355,6 +356,8 @@ function main() {
 
                 GET = (TATGrossIncome - TAT) * 0.045;
 
+                OTAT = TATGrossIncome * 0.03;
+
                 OLDWAY_GETGrossIncome = TATGrossIncome * (1.0978875 / 0.955);
                 OLDWAY_GET            = OLDWAY_GETGrossIncome - TAT - TATGrossIncome;
 
@@ -370,6 +373,7 @@ function main() {
                                         TATGrossIncome + "," +
                                         TAT + "," +
                                         GET + "," +
+                                        OTAT + "," +
                                         OLDWAY_GETGrossIncome + "," +
                                         OLDWAY_GET + "\n";
 
