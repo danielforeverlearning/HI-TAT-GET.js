@@ -353,7 +353,7 @@ function main() {
 
                 TAT = TATGrossIncome * 0.1025;
 
-                GET = (TATGrossIncome - TAT) * 0.0425;
+                GET = (TATGrossIncome - TAT) * 0.045;
 
                 OLDWAY_GETGrossIncome = TATGrossIncome * (1.0978875 / 0.955);
                 OLDWAY_GET            = OLDWAY_GETGrossIncome - TAT - TATGrossIncome;
